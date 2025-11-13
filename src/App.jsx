@@ -13,13 +13,14 @@ function App() {
 
   return (
     <>
-    <NavigationBar/>
+    
     <Router>
+      <NavigationBar/>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/products" element={<ProductList/>}/>
-        <Route path="/products/:id" element={<ProductDetails/>}/>
-        <Route path="/addproduct" element={<AddProduct/>}/>
+        <Route path="/" element={<Home />}/>
+        <Route path="/product" element={<ProductList />}/>
+        <Route path="/product/:id" element={<ProductDetails />}/>
+        <Route path="/addproduct" element={<AddProduct />}/>
       </Routes>
     </Router>
     </>

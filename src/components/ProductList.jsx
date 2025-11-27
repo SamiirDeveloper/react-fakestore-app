@@ -36,21 +36,25 @@ function ProductList() {
           {products.map((product) => (
             <Col key={product.id} md={4} className="mb-4">
               <Card className="h-100 shadow-sm">
-                <Card.Img variant="top" src={product.image} alt={product.title} />
+                <Card.Img
+                  variant="top"
+                  src={product.image}
+                  alt={product.title}
+                />
                 <Card.Body>
                   <Card.Title>{product.title}</Card.Title>
                   <Card.Text>${product.price}</Card.Text>
-                  <Link to={`/products/${product.id}`}>
-                    <Button variant="primary">View Details</Button>
-                  </Link>
                 </Card.Body>
+                <Link className="custom-bottom" to={`/product/${product.id}`}>
+                  <Button variant="primary">View Details</Button>
+                </Link>
               </Card>
             </Col>
           ))}
         </Row>
       </Container>
     </>
-  )
+  );
 }
 
 export default ProductList;

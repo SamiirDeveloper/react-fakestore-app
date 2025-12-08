@@ -1,10 +1,12 @@
+import { useContext } from "react";
+import { Cart } from "./CartContext";
+import { FaShoppingCart } from "react-icons/fa";  // import cart icon
+
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { Cart } from "./CartContext"; 
 
 function NavigationBar() {
   const { cart } = useContext(Cart);
@@ -21,15 +23,14 @@ function NavigationBar() {
             <Nav.Link as={Link} to="/addproduct">Add Product</Nav.Link>
           </Nav>
 
-          
           <Nav>
             <Nav.Link as={Link} to="/cart" className="d-flex align-items-center">
-              <Button variant="success">
+              <Button variant="success" className="d-flex align-items-center">
+                <FaShoppingCart style={{ marginRight: '6px' }} />
                 Cart ({cart.length})
               </Button>
             </Nav.Link>
           </Nav>
-
         </Navbar.Collapse>
       </Container>
     </Navbar>

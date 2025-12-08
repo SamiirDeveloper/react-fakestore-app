@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { Cart } from "./Cart"; 
+import { Cart } from "./CartContext"; 
 
 function NavigationBar() {
   const { cart } = useContext(Cart);

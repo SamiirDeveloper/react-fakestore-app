@@ -6,7 +6,7 @@ import ProductList from "./components/ProductList";
 import ProductDetails from "./components/ProductDetails";
 import AddProduct from "./components/AddProduct";
 import EditProduct from "./components/EditProduct";
-import CartPage from "./components/Cart"; 
+import CartPage from "./components/CartPage"; 
 
 function App() {
   return (

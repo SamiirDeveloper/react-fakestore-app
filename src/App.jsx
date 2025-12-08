@@ -1,4 +1,3 @@
-//import { useState } from 'react'
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
@@ -7,7 +6,7 @@ import ProductList from "./components/ProductList";
 import ProductDetails from "./components/ProductDetails";
 import AddProduct from "./components/AddProduct";
 import EditProduct from "./components/EditProduct";
-
+import CartPage from "./components/CartPage"; 
 
 function App() {
   return (
@@ -15,11 +14,12 @@ function App() {
       <Router>
         <NavigationBar />
         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/product" element={<ProductList />} />
-            <Route path="/product/:id" element={<ProductDetails />} />
-            <Route path="/product/:id/edit" element={<EditProduct />} />
-            <Route path="/addproduct" element={<AddProduct />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<ProductList />} /> 
+          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/product/:id/edit" element={<EditProduct />} />
+          <Route path="/addproduct" element={<AddProduct />} />
+          <Route path="/cart" element={<CartPage />} /> 
         </Routes>
       </Router>
     </>

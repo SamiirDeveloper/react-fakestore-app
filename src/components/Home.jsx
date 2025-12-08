@@ -15,7 +15,7 @@ function Home() {
         React, work with components, and fetch data from an API.
       </p>
 
-      <Button variant="primary" size="lg" onClick={() => navigate("/products")} type="submit">
+      <Button variant="primary" size="lg" onClick={() => navigate("/product")} type="submit">
         Navigate to Products page
       </Button>
     </>

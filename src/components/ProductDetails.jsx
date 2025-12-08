@@ -16,18 +16,38 @@ function ProductDetails() {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
 
+  
+  // ADD TO CART FUNCTION
+  
+  const addToCart = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image: product.image,
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("Item added to cart!");
+  };
+
+
+  // DELETE PRODUCT
   const handleDelete = async () => {
     try {
       await axios.delete(`https://fakestoreapi.com/products/${id}`);
       setShowModal(false);
 
-      // Redirect to product list
       navigate("/product");
     } catch (error) {
       console.error("Delete failed:", error);
     }
   };
 
+  // LOAD PRODUCT DETAILS
   useEffect(() => {
     axios
       .get(`https://fakestoreapi.com/products/${id}`)
@@ -41,10 +61,12 @@ function ProductDetails() {
       });
   }, [id]);
 
+  // RENDER STATES
   if (loading) return <p>Loading product details...</p>;
   if (error) return <p>{error}</p>;
   if (!product) return <p>Product not found.</p>;
 
+  // MAIN UI
   return (
     <Container className="my-5">
       <Card className="p-3 shadow-sm">
@@ -55,6 +77,7 @@ function ProductDetails() {
           alt={product.title}
           style={{ maxWidth: "300px", margin: "0 auto" }}
         />
+
         <Card.Body>
           <Card.Title>{product.title}</Card.Title>
           <Card.Text>{product.description}</Card.Text>
@@ -71,12 +94,16 @@ function ProductDetails() {
               <Button variant="warning">Edit Product</Button>
             </Link>
 
+            {/* ADD TO CART BUTTON */}
+            <Button variant="success" onClick={addToCart}>
+              Add to Cart
+            </Button>
+
             <Button variant="danger" onClick={() => setShowModal(true)}>
               Delete Product
             </Button>
           </div>
           {/* ---------------------------- */}
-
         </Card.Body>
       </Card>
 

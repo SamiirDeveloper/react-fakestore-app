@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { Cart } from "../Cart"; 
+import { Cart } from "./Cart"; 
 
 function ProductDetails() {
   const { id } = useParams();

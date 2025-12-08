@@ -17,7 +17,7 @@ function NavigationBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/productList">Products</Nav.Link>
+            <Nav.Link as={Link} to="/product">Products</Nav.Link>
             <Nav.Link as={Link} to="/addproduct">Add Product</Nav.Link>
           </Nav>
 
